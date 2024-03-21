@@ -1,0 +1,93 @@
+<html>
+
+<head>
+    <title>Calculator</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            width: 340px;
+            height: 400px;
+            background-color: #00203FFF;
+            border-radius: 6px;
+            box-shadow: inset 0px 1px 4px rgb(255, 247, 233);
+            
+        }
+
+        input {
+            height: 70px;
+            width: 70px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: larger;
+            color: rgb(0, 0, 0);
+            background-color: #ADEFD1FF;
+            border: none;
+            border-radius: 3.5px;
+            box-shadow: inset 2px 2px 3px rgba(52, 52, 52, 0.764);
+        }
+
+        input:hover {
+            background-color: rgb(52, 239, 155);
+        }
+
+        .operators {
+            background-color: rgb(0, 124, 68);
+        }
+    </style>
+    <script>
+        // This function clears all the values
+        function clearScreen() {
+            document.getElementById("result").value = "";
+        }
+
+        // This function displays the values
+        function display(value) {
+            document.getElementById("result").value += value;
+        }
+
+        // This function evaluates the expression and returns the result
+        function calculate() {
+            var p = document.getElementById("result").value;
+            var q = eval(p);
+            document.getElementById("result").value = q;
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <input class="display" type="text" id="result"
+            style="width: 230px; border-bottom:3px solid rgba(255, 200, 0, 0.894) ; background-color: white; margin-top: 5px ; text-align: right;
+            padding: 10px;"
+            disabled>
+        <input type="button" value="C" onclick="clearScreen()" id="btn"
+            style="margin-top: 5px; background-color: rgba(94, 227, 67, 0.911);">
+        <input type="button" value="1" onclick="display('1')">
+        <input type="button" value="2" onclick="display('2')">
+        <input type="button" value="3" onclick="display('3')">
+        <input type="button" value="/" onclick="display('/')" class="operators">
+        <input type="button" value="4" onclick="display('4')">
+        <input type="button" value="5" onclick="display('5')">
+        <input type="button" value="6" onclick="display('6')">
+        <input type="button" value="*" onclick="display('*')" class="operators">
+        <input type="button" value="7" onclick="display('7')">
+        <input type="button" value="8" onclick="display('8')">
+        <input type="button" value="9" onclick="display('9')">
+        <input type="button" value="-" onclick="display('-')" class="operators">
+        <input type="button" value="." onclick="display('.')">
+        <input type="button" value="0" onclick="display('0')">
+        <input type="button" value="=" onclick="calculate()" id="btn"
+            style="background-color: rgb(0, 9, 139); color: white; border: 1px solid white;">
+        <input type="button" value="+" onclick="display('+')" class="operators">
+    </div>
+
+</body>
+
+</html>
